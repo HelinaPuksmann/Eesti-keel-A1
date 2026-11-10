@@ -1,0 +1,195 @@
+<!doctype html><html lang="et"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Mis sulle maitseb? · A1</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#f7f5ee;color:#243832;font:17px/1.55 system-ui,sans-serif}main{max-width:900px;margin:auto;padding:24px}header{background:#173f35;color:#fff8e8;border-radius:22px;padding:28px}h1{font-size:clamp(2rem,6vw,3.6rem);line-height:1.05;margin:.2em 0}h2{margin-top:0}nav{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0}button,select,input,textarea{font:inherit}button,select{padding:9px 13px;border:1px solid #49665b;border-radius:9px;background:#fff;color:#173f35;cursor:pointer}button:hover,button[aria-current=true]{background:#d9eddf}button:disabled{opacity:.5;cursor:default}section{background:white;border-radius:18px;padding:clamp(16px,4vw,30px);border:1px solid #d8e0d7}label{display:block;margin:.6rem 0}input,textarea{display:block;width:min(100%,540px);padding:10px;border:1px solid #49665b;border-radius:8px;margin:10px 0}textarea{min-height:125px}small,.muted{color:#52665e}.card{display:block;width:100%;min-height:148px;margin:14px 0;background:#e8f4eb;font-size:clamp(1.2rem,4vw,1.85rem);font-weight:700}.row{display:flex;flex-wrap:wrap;gap:8px}blockquote{margin:1em 0;background:#f6f4eb;padding:12px 18px;border-left:4px solid #789a83}.feedback{min-height:2em;font-weight:650}.tag{letter-spacing:.13em;font-size:.75rem;font-weight:750}footer{margin:1rem 0;color:#52665e;font-size:.85rem}
+
+body{background:#f6f7fe;color:#29334a}header{background:linear-gradient(115deg,#d8edff,#e9ddff 62%,#fce1ed);color:#29334a;position:relative;padding-right:clamp(68px,15vw,128px)}.hero-icon{position:absolute;right:clamp(12px,4vw,32px);top:24px;font-size:clamp(2rem,6vw,4rem)}section{border-color:#dddff0;border-top:7px solid var(--accent,#d4ebff)}section[data-section="1"]{--accent:#e8dbff}section[data-section="2"]{--accent:#f8dbe9}section[data-section="3"]{--accent:#d7efdf}section[data-section="4"]{--accent:#e8dbff}nav button:nth-child(1){background:#e5f3ff}nav button:nth-child(2),nav button:nth-child(5){background:#f0e7ff}nav button:nth-child(3){background:#fce8f1}nav button:nth-child(4){background:#e1f4e8}nav button[aria-current=true]{outline:2px solid #394762;outline-offset:1px}.card{background:#e5f3ff}blockquote{background:#f3edfc;border-color:#ad96d2}.feedback[data-result="correct"]{color:#175e3b}.feedback[data-result="incorrect"]{color:#8f294c} .entry-box{width:min(100%,540px)}[hidden]{display:none!important}
+.credits{margin-top:14px;font-size:0.9rem;line-height:1.45}</style>
+<main><header><span class="hero-icon" aria-hidden="true">🥪</span><div class="tag">EESTI KEEL · A1 · 16. PEATÜKK</div><h1>Mis sulle maitseb?</h1><div>Food vocabulary · Three forms · With and without</div><div class="credits">Autor / Author: <strong>Helina Puksmann</strong> · Kaasautor / Co-author: <strong>ChatGPT (GPT-6)</strong></div></header>
+<nav aria-label="Harjutused" id="nav"></nav><section id="panel"></section>
+<footer>Õppematerjali aluseks on Inga Manguse ja Merge Simmuli õpiku „Tere!“ 16. peatükk.</footer></main>
+<script>
+const packs={
+'Põhisõnad / Core words':`piim|piima|piima|milk
+kohv|kohvi|kohvi|coffee
+vesi|vee|vett|water
+suhkur|suhkru|suhkrut|sugar
+juust|juustu|juustu|cheese
+sink|singi|sinki|ham
+vorst|vorsti|vorsti|sausage
+või|või|võid|butter
+leib|leiva|leiba|bread
+võileib|võileiva|võileiba|sandwich
+muna|muna|muna|egg
+kartul|kartuli|kartulit|potato
+sibul|sibula|sibulat|onion
+kurk|kurgi|kurki|cucumber
+tomat|tomati|tomatit|tomato
+porgand|porgandi|porgandit|carrot
+õun|õuna|õuna|apple
+sidrun|sidruni|sidrunit|lemon
+jää|jää|jääd|ice
+mesi|mee|mett|honey
+supp|supi|suppi|soup
+tee|tee|teed|tea
+mahl|mahla|mahla|juice
+salat|salati|salatit|salad`,
+'Peatüki lisasõnad / Chapter extras':`pannkook|pannkoogi|pannkooki|pancake
+pirukas|piruka|pirukat|pie
+saiake|saiakese|saiakest|bun
+moos|moosi|moosi|jam
+kohuke|kohukese|kohukest|chocolate-coated curd snack
+kohupiim|kohupiima|kohupiima|curd
+kodujuust|kodujuustu|kodujuustu|cottage cheese
+hapukoor|hapukoore|hapukoort|sour cream
+kohvikoor|kohvikoore|kohvikoort|coffee cream
+morss|morsi|morssi|juice drink
+kali|kalja|kalja|kvass
+viiner|viineri|viinerit|frankfurter
+hakkliha|hakkliha|hakkliha|minced meat
+lõhe|lõhe|lõhet|salmon
+heeringas|heeringa|heeringat|herring
+mustikas|mustika|mustikat|bilberry
+maasikas|maasika|maasikat|strawberry
+pirn|pirni|pirni|pear
+küpsis|küpsise|küpsist|cookie
+jäätis|jäätise|jäätist|ice cream
+keefir|keefiri|keefirit|kefir
+apelsinimahl|apelsinimahla|apelsinimahla|orange juice
+komm|kommi|kommi|candy
+makaronid|makaronide|makarone|pasta (plural)
+liha|liha|liha|meat
+õlu|õlle|õlut|beer`,
+'Rühmade lisasõnad / Group extras':`kana|kana|kana|chicken
+jogurt|jogurti|jogurtit|yoghurt
+riis|riisi|riisi|rice
+pasta|pasta|pastat|pasta
+banaan|banaani|banaani|banana
+küüslauk|küüslaugu|küüslauku|garlic
+sõõrik|sõõriku|sõõrikut|doughnut
+pipar|pipra|pipart|pepper
+brokoli|brokoli|brokolit|broccoli
+viinamari|viinamarja|viinamarja|grape
+seen|seene|seent|mushroom
+uba|oa|uba|bean
+jahu|jahu|jahu|flour
+õli|õli|õli|oil
+pähkel|pähkli|pähklit|nut
+vaarikas|vaarika|vaarikat|raspberry`};
+const tasks={
+'Loe / Read':[
+['Millega joob Imbi vett?','sidruniga','Imbi joob vett sidruniga.','piimaga','jääga'],
+['Millega Imbi kohvi joob?','kohvikoore ja suhkruga','Imbi joob kohvi kohvikoore ja suhkruga.','piima ja meega','sidruni ja suhkruga'],
+['Mida Liina joob?','kakaod','Liina tahab hommikul kakaod juua.','piima','morssi'],
+['Millega sööb Niklas viinereid?','munaga','Niklasele maitsevad viinerid munaga.','juustuga','sibulaga'],
+['Kellele maitseb piim?','Janele','Jane taldrikul on õun, lõhevõileib ja kook. Talle maitseb piim.','Liinale','Niklasele'],
+['Mida peab poest lastele ostma?','piima, komme, keefirit ja küpsiseid','Need neli asja on kirjas lastele mõeldud nimekirjas.','sinki, vorsti ja juustu','kartulit ja liha'],
+['Millal nad söövad makarone ja hakkliha?','õhtuks','Makarone ja hakkliha söövad nad õhtuks.','hommikuks','lõunaks']],
+'Kirjuta / Type':[
+['Ma soovin kohvi ___. (with sugar)','suhkruga','suhkur → suhkru + ga → suhkruga'],
+['Ma soovin kohvi ___. (with sugarout)','suhkruta','suhkur → suhkru + ta → suhkruta'],
+['Palun võileiba ___. (with ham)','singiga','sink → singi + ga → singiga'],
+['Palun võileiba ___. (without butter)','võita','või → või + ta → võita'],
+['Palun vett ___ ja jääta. (with lemon)','sidruniga','sidrun → sidruni + ga → sidruniga'],
+['Palun mahla ___. (without ice)','jääta','jää → jää + ta → jääta'],
+['Ma söön salatit ___. (without onion)','sibulata','sibul → sibula + ta → sibulata'],
+['Ma joon teed ___. (with honey)','meega','mesi → mee + ga → meega'],
+['Ma ostan ___. (ham)','sinki','Mida ma ostan? Sinki.'],
+['Ma ostan kaks ___. (potatoes)','kartulit','Kaks + ainsuse osastav → kaks kartulit.'],
+['Mulle ___ piim. (like)','maitseb','Piim on ainsuses → maitseb.'],
+['Mulle ___ pirnid. (like)','maitsevad','Pirnid on mitmuses → maitsevad.']],
+'Telli / Order':[
+['Coffee with cream, without sugar.','Palun kohvi koorega ja suhkruta.','koore + ga / suhkru + ta','Palun kohvi kooreta ja suhkruga.','Palun kohvi koorega ja suhkruga.'],
+['A sandwich with cheese, without butter.','Palun võileiba juustuga, aga ilma võita.','juustu + ga / või + ta','Palun võileiba võiga, aga ilma juustuta.','Palun võileiba juustuga ja võiga.'],
+['Water with lemon, without ice.','Palun vett sidruniga ja jääta.','sidruni + ga / jää + ta','Palun vett sidrunita ja jääga.','Palun vett sidruniga ja jääga.'],
+['Tea with honey, without lemon.','Palun teed meega ja sidrunita.','mee + ga / sidruni + ta','Palun teed meeta ja sidruniga.','Palun teed meega ja sidruniga.'],
+['Salad with cucumber, without onion.','Palun salatit kurgiga ja sibulata.','kurgi + ga / sibula + ta','Palun salatit kurgita ja sibulaga.','Palun salatit kurgiga ja sibulaga.'],
+['Soup with potatoes, without meat.','Palun suppi kartuliga ja lihata.','kartuli + ga / liha + ta','Palun suppi kartulita ja lihaga.','Palun suppi kartuliga ja lihaga.'],
+['Pancakes with jam, without sour cream.','Palun pannkooke moosiga ja hapukooreta.','moosi + ga / hapukoore + ta','Palun pannkooke moosita ja hapukoorega.','Palun pannkooke moosiga ja hapukoorega.'],
+['Coffee with milk, without ice.','Palun kohvi piimaga ja jääta.','piima + ga / jää + ta','Palun kohvi piimata ja jääga.','Palun kohvi piimaga ja jääga.'],
+['A sandwich with ham, without tomato.','Palun võileiba singiga ja tomatita.','singi + ga / tomati + ta','Palun võileiba singita ja tomatiga.','Palun võileiba singiga ja tomatiga.'],
+['Yoghurt with blueberries, without sugar.','Palun jogurtit mustikatega ja suhkruta.','mustikate + ga / suhkru + ta','Palun jogurtit mustikateta ja suhkruga.','Palun jogurtit mustikatega ja suhkruga.']],
+'Tõlgi / Translate':[
+['I drink coffee without sugar.','Ma joon kohvi suhkruta.','joon · suhkruta',['Ma joon kohvi ilma suhkruta','Joon kohvi suhkruta','Joon kohvi ilma suhkruta','Ma joon suhkruta kohvi','Joon suhkruta kohvi']],
+['You (one person) drink tea with honey.','Sa jood teed meega.','jood · meega',['Sina jood teed meega','Jood teed meega','Sa jood meega teed','Sina jood meega teed','Jood meega teed']],
+['She eats salad without onion.','Ta sööb salatit sibulata.','sööb · sibulata',['Tema sööb salatit sibulata','Ta sööb salatit ilma sibulata','Tema sööb salatit ilma sibulata','Ta sööb sibulata salatit','Tema sööb sibulata salatit']],
+['We eat sandwiches with cheese.','Me sööme võileibu juustuga.','sööme · juustuga',['Meie sööme võileibu juustuga','Sööme võileibu juustuga','Me sööme juustuga võileibu','Meie sööme juustuga võileibu','Sööme juustuga võileibu']],
+['You (more than one person) drink water with lemon.','Te joote vett sidruniga.','joote · sidruniga',['Teie joote vett sidruniga','Joote vett sidruniga','Te joote sidruniga vett','Teie joote sidruniga vett','Joote sidruniga vett']],
+['They eat pancakes with jam.','Nad söövad pannkooke moosiga.','söövad · moosiga',['Nemad söövad pannkooke moosiga','Nad söövad moosiga pannkooke','Nemad söövad moosiga pannkooke']],
+['I want juice without ice.','Ma tahan mahla jääta.','tahan · jääta',['Tahan mahla jääta','Ma tahan mahla ilma jääta','Tahan mahla ilma jääta','Ma tahan jääta mahla','Tahan jääta mahla']],
+['He wants coffee with milk.','Ta tahab kohvi piimaga.','tahab · piimaga',['Tema tahab kohvi piimaga','Ta tahab piimaga kohvi','Tema tahab piimaga kohvi']],
+['I like coffee with milk.','Mulle maitseb kohv piimaga.','mulle maitseb · kohv',['Mulle maitseb piimaga kohv','Minule maitseb kohv piimaga','Minule maitseb piimaga kohv','Piimaga kohv maitseb mulle']],
+['They like pancakes with jam.','Neile maitsevad pannkoogid moosiga.','neile maitsevad · pannkoogid',['Neile maitsevad moosiga pannkoogid','Nendele maitsevad pannkoogid moosiga','Nendele maitsevad moosiga pannkoogid','Moosiga pannkoogid maitsevad neile']]]};
+const icons=['🗂️','📖','✏️','☕','💬'];
+const names=['Sõnakaardid / Flashcards',...Object.keys(tasks)];
+const states=Object.fromEntries(Object.keys(tasks).map(k=>[k,{i:0,missed:new Set(),order:tasks[k].map((_,i)=>i),done:false}]));
+let tab=names[0],pack=Object.keys(packs)[0],index=0,revealed=false;
+const panel=document.getElementById('panel'), nav=document.getElementById('nav');
+const el=(id)=>document.getElementById(id);
+const shuffle=(items)=>{const copy=[...items];for(let i=copy.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[copy[i],copy[j]]=[copy[j],copy[i]]}return copy};
+for(const name of names){const b=document.createElement('button');b.innerHTML='<span aria-hidden="true">'+icons[names.indexOf(name)]+'</span> '+name;b.onclick=()=>{tab=name;render();panel.querySelector('h2').focus()};nav.append(b)}
+function render(){
+ Array.from(nav.children).forEach((b,i)=>b.setAttribute('aria-current',names[i]===tab));
+ panel.dataset.section=names.indexOf(tab);
+ panel.innerHTML='<h2 tabindex="-1"><span aria-hidden="true">'+icons[names.indexOf(tab)]+'</span> '+tab+'</h2>';
+ if(tab===names[0]){cards();return}
+ quiz();
+}
+function cards(){
+ const rows=packs[pack].split('\n'),[nom,gen,part,en]=rows[index].split('|');
+ panel.insertAdjacentHTML('beforeend',`<p>Meenuta kolme vormi, siis pööra kaart ümber.<br><small>Say the three forms from memory, then flip the card. The second form is the base for -ga and -ta.</small></p>
+ <label for="pack">Sõnapakk / Word deck</label><select id="pack">${Object.keys(packs).map(x=>'<option>'+x+'</option>').join('')}</select>
+ <button id="flip" class="card" aria-pressed="${revealed}">${revealed?nom+' · '+gen+' · '+part:en}</button>
+ <p class="muted">${index+1} / ${rows.length} · ${revealed?'Nimetav · omastav · osastav':'Pööra kaart / Flip card'}</p>
+ ${revealed?'<p><strong>-ga:</strong> '+gen+'ga · <strong>-ta:</strong> '+gen+'ta</p>':''}
+ <div class="row"><button id="prev">Eelmine / Back</button><button id="next">Järgmine / Next</button></div>`);
+ el('pack').value=pack;el('pack').onchange=e=>{pack=e.target.value;index=0;revealed=false;render();el('pack').focus()};
+ el('flip').onclick=()=>{revealed=!revealed;render();el('flip').focus()};
+ el('prev').onclick=()=>{index=(index+rows.length-1)%rows.length;revealed=false;render();el('prev').focus()};
+ el('next').onclick=()=>{index=(index+1)%rows.length;revealed=false;render();el('next').focus()};
+}
+function quiz(){
+ const s=states[tab], items=tasks[tab];
+ if(s.done){
+ panel.insertAdjacentHTML('beforeend',`<p>Lahendatud / Completed: ${s.order.length}.</p><p>Proovi veel neid, mis vajasid harjutamist. / Retry the items you missed.</p><div class="row"><button id="retry" ${s.missed.size?'':'disabled'}>Korda (${s.missed.size}) / Retry</button><button id="restart">Kõik uuesti / Start over</button></div>`);
+ const start=(order)=>{s.order=order;s.i=0;s.missed.clear();s.done=false;render();panel.querySelector('h2').focus()};
+ el('retry').onclick=()=>start([...s.missed]);el('restart').onclick=()=>start(items.map((_,i)=>i));return}
+ const idx=s.order[s.i], [question,answer,why,...other]=items[idx], translation=tab===names[4], typing=translation||!other.length;
+ if(tab===names[1]){
+ const shopping=idx>=5;
+ panel.insertAdjacentHTML('beforeend', shopping?
+ '<p>Loe ostunimekirja. / Read the shopping list.</p><blockquote><strong>Hommikusöögiks:</strong> sinki, vorsti, juustu, mineraalvett, apelsinimahla ja võid.<br><strong>Lõunaks:</strong> liha ja kartulit.<br><strong>Õhtusöögiks:</strong> õlut, makarone ja hakkliha.<br><strong>Lastele:</strong> piima, komme, keefirit ja küpsiseid.</blockquote>':
+ '<p>Loe Imbi pere hommikusöögist. / Read about Imbi’s family breakfast.</p><blockquote>Imbi joob vett sidruniga ja kohvi kohvikoore ja suhkruga. Ta sööb võileiba vorstiga ja võisaia juustuga. Liina sööb pirni, kohukest ja moosisaia ning joob kakaod. Niklas sööb viinereid munaga ja salatit. Ta joob morssi või kalja. Jane sööb õuna, lõhevõileiba ja kooki. Talle maitseb piim.</blockquote>');
+ }
+ if(translation)panel.insertAdjacentHTML('beforeend','<p>Tõlgi lause eesti keelde. Alusta suure tähega ja pane lause lõppu sobiv kirjavahemärk.<br><small>Translate the sentence into Estonian. Start with a capital letter and add the correct punctuation mark at the end.</small></p>');
+ if(typing&&!translation)panel.insertAdjacentHTML('beforeend','<p>Kirjuta puuduv sõna. / Type the missing word.</p><details><summary>Vihje / Hint</summary><p><strong>With → omastav + -ga</strong> (juustu + ga). <strong>Without → omastav + -ta</strong> (juustu + ta). <em>Mida?</em> pärast <em>ma ostan</em> ja sõna <em>kaks</em> → osastav. Üks asi <em>maitseb</em>, mitu asja <em>maitsevad</em>.</p></details>');
+ if(tab===names[3])panel.insertAdjacentHTML('beforeend','<p>Vali sobiv tellimus. / Choose the order that matches the English.</p>');
+ panel.insertAdjacentHTML('beforeend',`<p class="muted">${s.i+1} / ${s.order.length}</p><p id="question"><strong>${question}</strong></p><div id="answers" class="row"></div><div id="feedback" class="feedback" role="status"></div><button id="next" hidden>Edasi / Next</button>`);
+ const normalize=(value)=>value.normalize('NFC').toLocaleLowerCase('et').replace(translation?/[,.!?]/g:/$^/g,' ').trim().replace(/\s+/g,' ');
+ const accepted=translation?[answer,...other[0]]:[answer];
+ const feedback=el('feedback');
+ const check=(value,show=false)=>{
+ const correct=accepted.some(option=>normalize(value)===normalize(option));
+ if(!correct)s.missed.add(idx);
+ const punctuationTip=translation&&correct&&(!/^\p{Lu}/u.test(value.trim())||!/[.!?]$/.test(value.trim()));
+ feedback.dataset.result=correct?'correct':show?'shown':'incorrect';
+ feedback.textContent=show?'Vastus / Answer: '+answer+' · '+why:correct?'Õige! / Correct! '+(punctuationTip?'Pea meeles suurt algustähte ja lõpumärki. / Remember the capital letter and final punctuation. ':'')+(translation?'Näidis / Model: '+answer:why):'Veel ei klapi. / Try again. '+(typing&&!translation?'Vaata vihjet või proovi teist vormi. / Use the hint or try another form.':'');
+ if(correct||show){el('answers').querySelectorAll('button,input').forEach(b=>b.disabled=true);el('next').hidden=false;el('next').focus()}
+ };
+ if(typing){
+ el('answers').innerHTML='<div class="entry-box"><input aria-labelledby="question" id="entry" autocomplete="off" spellcheck="false"><button id="check" type="button">Kontrolli / Check</button> <button id="show" type="button">Näita vastust / Show answer</button></div>';
+ el('check').onclick=()=>{
+ const entry=el('entry');
+ if(!entry.value.trim()){feedback.textContent='Kirjuta kõigepealt vastus. / Enter an answer first.';entry.focus();return}
+ check(entry.value);
+ if(!entry.disabled)entry.focus();
+ };
+ el('entry').onkeydown=e=>{if(e.key==='Enter'&&!e.isComposing){e.preventDefault();el('check').click()}};
+ }else{
+ for(const option of shuffle([answer,...other])){const b=document.createElement('button');b.textContent=option;b.onclick=()=>check(option);el('answers').append(b)}
+ const b=document.createElement('button');b.textContent='Näita vastust / Show answer';b.id='show';el('answers').append(b);
+ }
+ el('show').onclick=()=>check('',true);
+ el('next').onclick=()=>{s.i++;s.done=s.i===s.order.length;render();(el('question')||panel.querySelector('h2')).setAttribute('tabindex','-1');(el('question')||panel.querySelector('h2')).focus()};
+}
+render();
+</script></html>
