@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="et">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pildimälu katse</title>
+  <style>
+    :root { color-scheme: light; font-family: "Instrument Sans", system-ui, sans-serif; color: #202a24; background: #f3f1e8; }
+    * { box-sizing: border-box; }
+    body { margin: 0; min-height: 100svh; display: grid; place-items: center; padding: clamp(12px, 4vw, 48px); }
+    main { width: min(100%, 840px); background: #fffef9; border: 1px solid #dcded3; border-radius: 24px; padding: clamp(18px, 5vw, 60px); box-shadow: 0 16px 48px #202a2410; }
+    header { display: flex; align-items: center; justify-content: space-between; gap: 12px; border-bottom: 1px solid #dcded3; padding-bottom: 16px; margin-bottom: 32px; font-weight: 650; }
+    #round, #timer { font-variant-numeric: tabular-nums; color: #476150; }
+    h1 { font-family: "Instrument Serif", Georgia, serif; font-weight: 500; letter-spacing: -.045em; font-size: clamp(2rem, 5vw, 3.75rem); line-height: 1.05; margin: 0 0 18px; }
+    p, li { line-height: 1.55; }
+    ul { padding-inline-start: 1.25em; margin: 0 0 28px; }
+    li + li { margin-top: 8px; }
+    button { cursor: pointer; font: inherit; font-weight: 650; border-radius: 10px; }
+    .primary { background: #254e39; color: white; border: 1px solid #254e39; padding: 13px 20px; }
+    .primary:hover:not(:disabled) { background: #173725; }
+    button:disabled { cursor: default; opacity: .65; }
+    button:focus-visible { outline: 3px solid #795e17; outline-offset: 4px; }
+    :focus:not(:focus-visible) { outline: none; }
+    #photos { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(5px, 1.5vw, 14px); }
+    #photos img { display: block; width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 10px; background: #e9e7e0; }
+    #timer { margin: 0 0 12px; }
+    #options { display: grid; gap: 9px; }
+    .option { text-align: left; padding: 12px; background: #f5f6ef; color: inherit; border: 1px solid #dcded3; }
+    .option:hover { background: #e9f0e5; border-color: #78907c; }
+    .option span { display: inline-block; min-width: 2em; color: #476150; }
+    #load-status { margin: 12px 0 0; }
+    [hidden] { display: none !important; }
+  </style>
+  <script src="katse.js" defer></script>
+</head>
+<body>
+  <main>
+    <header><span>Pildimälu katse</span><span id="round" hidden></span></header>
+    <section id="intro" aria-labelledby="intro-title">
+      <h1 id="intro-title">Jäta meelde piltide järjekord</h1>
+      <ul>
+        <li>Katses on 10 vooru. Igas voorus näed korraga kolme pilti 2 sekundit.</li>
+        <li>Kui pildid kaovad, vali kolme vastuse seast loomade õige järjekord vasakult paremale.</li>
+        <li>Vastamiseks on 10 sekundit. Kui aeg saab täis, algab järgmine voor.</li>
+      </ul>
+      <button id="start" type="button" class="primary" disabled>Alusta katset</button>
+      <p id="load-status" role="status">Pilte laaditakse…</p>
+    </section>
+    <section id="stimulus" aria-labelledby="stimulus-title" hidden>
+      <h1 id="stimulus-title" tabindex="-1">Vaata pilte</h1>
+      <div id="photos"></div>
+    </section>
+    <section id="question" aria-labelledby="question-title" hidden>
+      <h1 id="question-title" tabindex="-1">Mis järjekorras olid loomad?</h1>
+      <p>Vali järjekord vasakult paremale.</p>
+      <p id="timer" aria-live="off"></p>
+      <div id="options"></div>
+    </section>
+    <section id="finish" aria-labelledby="finish-title" hidden>
+      <h1 id="finish-title" tabindex="-1">Aitäh osalemast!</h1>
+      <p>Katse on lõppenud. Kui CSV-faili allalaadimine ei alanud, vajuta allolevat nuppu.</p>
+      <button id="download" type="button" class="primary">Laadi tulemused alla</button>
+    </section>
+  </main>
+</body>
+</html>
