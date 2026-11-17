@@ -1,12 +1,14 @@
 # Eesti-keel-A1
 
-Eesti keele A1-taseme interaktiivsed harjutused iseseisvaks õppimiseks. / Interactive A1 Estonian exercises for independent study.
+Eesti keele A1-taseme interaktiivsed harjutused iseseisvaks õppimiseks.
 
-## Harjutused
+## Õppijatele jagatavad harjutused
 
-Klõpsa mängu nimel, et see avada. / Click a game title to open it.
+Kopeeri soovitud harjutuse link ja jaga seda õppijatega.
 
-- [Pildimälu katse](./pildimalu-katse/)
-- [Mis sulle maitseb?](./Mis_sulle_maitseb_A1.html)
-- [Minu nimi on …](./BFM_Minu_nimi_on_A1.html)
-- [Anu sünnipäev](./Anu%20s%C3%BCnnip%C3%A4ev/)
+- [Pildimälu katse](https://helinapuksmann.github.io/Eesti-keel-A1/pildimalu-katse/)
+- [Mis sulle maitseb?](https://helinapuksmann.github.io/Eesti-keel-A1/Mis_sulle_maitseb_A1.html)
+- [Minu nimi on …](https://helinapuksmann.github.io/Eesti-keel-A1/BFM_Minu_nimi_on_A1.html)
+- [Anu sünnipäev](https://helinapuksmann.github.io/Eesti-keel-A1/Anu%20s%C3%BCnnip%C3%A4ev/Anu_sunnipaev_A1_English_instructions_v9.html)
+
+[A1 õppematerjalide avaleht](https://helinapuksmann.github.io/Eesti-keel-A1/)
