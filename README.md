@@ -14,4 +14,6 @@ Kopeeri soovitud harjutuse link ja jaga seda õppijatega.
 - [Riided – A1](https://HelinaPuksmann.github.io/Eesti-keel-A1/Riided_A1.html)
 - [Martini pere ja päev – interaktiivsed harjutused](Martini_pere_ja_paev_A1.html)
   
+- [Külmkapi saladus](https://helinapuksmann.github.io/Eesti-keel-A1/Kylmkapi_saladus_AUTORITEGA.html)
+
 [A1 õppematerjalide avaleht](https://helinapuksmann.github.io/Eesti-keel-A1/)
