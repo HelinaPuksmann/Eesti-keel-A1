@@ -16,4 +16,6 @@ Kopeeri soovitud harjutuse link ja jaga seda õppijatega.
   
 - [Külmkapi saladus](https://helinapuksmann.github.io/Eesti-keel-A1/Kylmkapi_saladus_AUTORITEGA.html)
 
+- [Kata laud!](https://helinapuksmann.github.io/Eesti-keel-A1/kata-laud/)
+
 [A1 õppematerjalide avaleht](https://helinapuksmann.github.io/Eesti-keel-A1/)
