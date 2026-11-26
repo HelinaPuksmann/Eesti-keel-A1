@@ -12,5 +12,6 @@ Kopeeri soovitud harjutuse link ja jaga seda õppijatega.
 - [Anu sünnipäev](https://helinapuksmann.github.io/Eesti-keel-A1/Anu%20s%C3%BCnnip%C3%A4ev/Anu_sunnipaev_A1_English_instructions_v9.html)
 - [Kes on ukse taga? B1.1](https://helinapuksmann.github.io/Eesti-keel-A1/Kes_on_ukse_taga.html)
 - [Riided – A1](https://HelinaPuksmann.github.io/Eesti-keel-A1/Riided_A1.html)
+- [Martini pere ja päev – interaktiivsed harjutused](Martini_pere_ja_paev_A1.html)
   
 [A1 õppematerjalide avaleht](https://helinapuksmann.github.io/Eesti-keel-A1/)
